@@ -1,4 +1,4 @@
-# my-form-state
+# my-react-form-state
 
 ![logo](logo.png)
 
