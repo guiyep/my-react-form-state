@@ -43,7 +43,7 @@ They depend on how you want to use the library:
 }
 ```
 
-#### With React-Redux
+#### With Redux
 
 ```bash
 {
