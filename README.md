@@ -20,6 +20,10 @@ Last but not least, it integrates with [Yup](https://github.com/jquense/yup)/[Jo
 
 Check the [Documentation](https://docs-my-react-form-state.netlify.com/). The API is easy and fast to develop!
 
+## Storybook
+
+Check [Storybook](https://storybook-my-react-form-state.netlify.com/) for more examples.
+
 ## Note
 
 The library is fully tested using Jest and fully documented using JsDoc.
@@ -305,10 +309,6 @@ export default MyForm;
 ###### Above example With React-Redux
 
 [![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-albattani-hofp9)
-
-## Storybook
-
-Check [Storybook](https://storybook-my-react-form-state.netlify.com/) for more examples.
 
 ## More from me :)
 
