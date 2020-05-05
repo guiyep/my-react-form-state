@@ -32,7 +32,7 @@ import { gerDefaultReducerProp } from '../../redux/init';
  *
  * @example
  *
- * import yup from 'my-form-state/yup'
+ * import yup from 'my-react-form-state/yup'
  *
  * const [formState, { updateField, updateForm, submitForm, resetForm}] = useMyFormState({
  *     initialState: { ...props },

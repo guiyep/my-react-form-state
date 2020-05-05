@@ -2,7 +2,7 @@
 
 ![logo](logo.png)
 
-[![NPM](https://img.shields.io/npm/v/my-form-state.svg)](https://www.npmjs.com/package/my-form-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/my-react-form-state.svg)](https://www.npmjs.com/package/my-react-form-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 This is a React form state management library that works with React/Redux/React-Native.
 
@@ -18,7 +18,7 @@ Last but not least, it integrates with [Yup](https://github.com/jquense/yup)/[Jo
 
 ## Documentation
 
-Check the [Documentation](https://docs-my-form-state.netlify.com/). The API is easy and fast to develop!
+Check the [Documentation](https://docs-my-react-form-state.netlify.com/). The API is easy and fast to develop!
 
 ## Note
 
@@ -27,7 +27,7 @@ The library is fully tested using Jest and fully documented using JsDoc.
 ## Getting Started
 
 ```bash
-npm install --save my-form-state
+npm install --save my-react-form-state
 ```
 
 ### Peer Dependencies
@@ -56,190 +56,7 @@ They depend on how you want to use the library:
 
 ## Try It!!
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
-
-## Example with React-Redux
-
-The library will initialize a `my-form-state` entry in your redux state where all the forms data will live. You can check the state at any given time using the redux tools. Any change in the redux state form will trigger an update in the `useMyFormState` hook.
-
-```js
-import React from 'react';
-import { useMyFormState } from 'my-form-state/react-redux';
-import Form from '@YourFormComponent';
-
-const MyForm = ({ onSubmit }) => {
-  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
-    initialState: { alias: 'guiyep' },
-  });
-
-  const onFieldChangeHandler = (field, value) => updateField({ field, value });
-
-  const onSubmitHandler = async () => {
-    const result = await submitForm();
-    onSubmit(result);
-  };
-
-  return <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={submitForm} />;
-};
-
-export default MyForm;
-```
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/youthful-dust-yl5vf)
-
-## Example with only React (No Redux)
-
-The library will keep the state internal to your component. No extra configuration needed.
-
-```js
-import React from 'react';
-import { useMyFormState } from 'my-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
-import Form from '@YourFormComponent';
-
-const MyForm = ({ onSubmit }) => {
-  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
-    initialState: { alias: 'guiyep' },
-  });
-
-  const onFieldChangeHandler = (field, value) => updateField({ field, value });
-
-  const onSubmitHandler = async () => {
-    const result = await submitForm();
-    onSubmit(result);
-  };
-
-  return (
-    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
-  );
-};
-
-export default MyForm;
-```
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gallant-moon-2yj06)
-
-## Example with only React-Native, it only changes the UI implementation :)
-
-```js
-import React from 'react';
-import { useMyFormState } from 'my-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
-import Form from '@YourFormComponent';
-
-const MyForm = ({ onSubmit }) => {
-  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
-    initialState: { alias: 'guiyep' },
-  });
-
-  const onFieldChangeHandler = (field, value) => updateField({ field, value });
-
-  const onSubmitHandler = async () => {
-    const result = await submitForm();
-    onSubmit(result);
-  };
-
-  return (
-    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
-  );
-};
-
-export default MyForm;
-```
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
-
-## With YUP form schema.
-
-```js
-import React from 'react';
-import yup from 'my-form-state/yup';
-import { useMyFormState } from 'my-form-state/react';
-import * as YUP from 'yup';
-import Form from '@YourFormComponent';
-
-const YUPSchema = YUP.object().shape({
-  alias: YUP.string().required(),
-});
-
-const MyForm = ({ onSubmit }) => {
-  const [formState, { updateField, submitForm }] = useMyFormState({
-    initialState: { alias: 'guiyep' },
-    formSchema: yup.formSchema(YUPSchema),
-  });
-
-  const onFieldChangeHandler = (field, value) => updateField({ field, value });
-
-  const onSubmitHandler = async () => {
-    const result = await submitForm();
-    onSubmit(result);
-  };
-
-  return (
-    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
-  );
-};
-
-export default MyForm;
-```
-
-###### Above example With React
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
-
-###### Above example With React-Redux
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
-
-## With JSON form schema (Using the latest [JsonSchema](https://json-schema.org/) draft).
-
-```js
-import React from 'react';
-import jsonSchema from 'my-form-state/json-schema';
-import { useMyFormState } from 'my-form-state/react';
-import Form from '@YourFormComponent';
-
-const JSONSchema = {
-  type: 'object',
-  properties: {
-    name: {
-      type: 'string',
-      minLength: 1,
-    },
-    familyName: {
-      type: 'string',
-      minLength: 1,
-    },
-  },
-  required: ['name', 'familyName'],
-};
-
-const MyForm = ({ onSubmit }) => {
-  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
-    initialState: { alias: 'guiyep' },
-    formSchema: jsonSchema.formSchema(JSONSchema),
-  });
-
-  const onFieldChangeHandler = (field, value) => updateField({ field, value });
-
-  const onSubmitHandler = async () => {
-    const result = await submitForm();
-    onSubmit(result);
-  };
-
-  return (
-    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} onReset={resetForm} />
-  );
-};
-
-export default MyForm;
-```
-
-###### Above example With React
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/strange-northcutt-55xpi)
-
-###### Above example With React-Redux
-
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-albattani-hofp9)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
 ## Form UI Component Example.
 
@@ -300,15 +117,198 @@ export default Form;
 
 ###### Above example With React
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
 ###### Above example With React-Native
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
+
+## Example State with React-Redux
+
+The library will initialize a `my-react-form-state` entry in your redux state where all the forms data will live. You can check the state at any given time using the redux tools. Any change in the redux state form will trigger an update in the `useMyFormState` hook.
+
+```js
+import React from 'react';
+import { useMyFormState } from 'my-react-form-state/react-redux';
+import Form from '@YourFormComponent';
+
+const MyForm = ({ onSubmit }) => {
+  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
+    initialState: { alias: 'guiyep' },
+  });
+
+  const onFieldChangeHandler = (field, value) => updateField({ field, value });
+
+  const onSubmitHandler = async () => {
+    const result = await submitForm();
+    onSubmit(result);
+  };
+
+  return <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={submitForm} />;
+};
+
+export default MyForm;
+```
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/youthful-dust-yl5vf)
+
+## Example State with only React (No Redux)
+
+The library will keep the state internal to your component. No extra configuration needed.
+
+```js
+import React from 'react';
+import { useMyFormState } from 'my-react-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
+import Form from '@YourFormComponent';
+
+const MyForm = ({ onSubmit }) => {
+  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
+    initialState: { alias: 'guiyep' },
+  });
+
+  const onFieldChangeHandler = (field, value) => updateField({ field, value });
+
+  const onSubmitHandler = async () => {
+    const result = await submitForm();
+    onSubmit(result);
+  };
+
+  return (
+    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
+  );
+};
+
+export default MyForm;
+```
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gallant-moon-2yj06)
+
+## Example State with only React-Native, it only changes the UI implementation :)
+
+```js
+import React from 'react';
+import { useMyFormState } from 'my-react-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
+import Form from '@YourFormComponent';
+
+const MyForm = ({ onSubmit }) => {
+  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
+    initialState: { alias: 'guiyep' },
+  });
+
+  const onFieldChangeHandler = (field, value) => updateField({ field, value });
+
+  const onSubmitHandler = async () => {
+    const result = await submitForm();
+    onSubmit(result);
+  };
+
+  return (
+    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
+  );npm
+};
+
+export default MyForm;
+```
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
+
+## With YUP form schema.
+
+```js
+import React from 'react';
+import yup from 'my-react-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react';
+import * as YUP from 'yup';
+import Form from '@YourFormComponent';
+
+const YUPSchema = YUP.object().shape({
+  alias: YUP.string().required(),
+});
+
+const MyForm = ({ onSubmit }) => {
+  const [formState, { updateField, submitForm }] = useMyFormState({
+    initialState: { alias: 'guiyep' },
+    formSchema: yup.formSchema(YUPSchema),
+  });
+
+  const onFieldChangeHandler = (field, value) => updateField({ field, value });
+
+  const onSubmitHandler = async () => {
+    const result = await submitForm();
+    onSubmit(result);
+  };
+
+  return (
+    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} />
+  );
+};
+
+export default MyForm;
+```
+
+###### Above example With React
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
+
+###### Above example With React-Redux
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
+
+## With JSON form schema (Using the latest [JsonSchema](https://json-schema.org/) draft).
+
+```js
+import React from 'react';
+import jsonSchema from 'my-react-form-state/json-schema';
+import { useMyFormState } from 'my-react-form-state/react';
+import Form from '@YourFormComponent';
+
+const JSONSchema = {
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+      minLength: 1,
+    },
+    familyName: {
+      type: 'string',
+      minLength: 1,
+    },
+  },
+  required: ['name', 'familyName'],
+};
+
+const MyForm = ({ onSubmit }) => {
+  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
+    initialState: { alias: 'guiyep' },
+    formSchema: jsonSchema.formSchema(JSONSchema),
+  });
+
+  const onFieldChangeHandler = (field, value) => updateField({ field, value });
+
+  const onSubmitHandler = async () => {
+    const result = await submitForm();
+    onSubmit(result);
+  };
+
+  return (
+    <Form formState={formState} onFieldChange={onFieldChangeHandler} onSubmit={onSubmitHandler} onReset={resetForm} />
+  );
+};
+
+export default MyForm;
+```
+
+###### Above example With React
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/strange-northcutt-55xpi)
+
+###### Above example With React-Redux
+
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-albattani-hofp9)
 
 ## Storybook
 
-Check [Storybook](https://storybook-my-form-state.netlify.com/) for more examples.
+Check [Storybook](https://storybook-my-react-form-state.netlify.com/) for more examples.
 
 ## More from me :)
 

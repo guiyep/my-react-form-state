@@ -63,7 +63,7 @@ const buildInitialState = (initialState, fieldsDefinition) => {
  */
 
 /**
- * Remove a registered form from the `my-form-state` registry.
+ * Remove a registered form from the `my-react-form-state` registry.
  *
  * @kind function
  * @param {*} arguments - arguments as object.
@@ -84,7 +84,7 @@ const unregisterForm = ({ formId }) => {
 };
 
 /**
- * Register a form in the `my-form-state` registry and expose all the functionality available for being used in redux.
+ * Register a form in the `my-react-form-state` registry and expose all the functionality available for being used in redux.
  * This is used for reusing the selectors and operations for a particular form in any place of an app. Once is not used remember to
  * remove the reference with `unregisterForm`.
  *
@@ -159,7 +159,7 @@ export const registerForm = (
 };
 
 /**
- * Get an already registered form from the `my-form-state` registry.
+ * Get an already registered form from the `my-react-form-state` registry.
  *
  * @kind function
  * @param {*} arguments - arguments as object.
@@ -187,7 +187,7 @@ export const getFormFromRegistry = ({ formId }) => {
 export const yup = {
   formSchema: () => {
     throw Error(
-      `yup module has moved to 'my-form-state/yup please import it as : (import yup from 'my-form-state/yup')`,
+      `yup module has moved to 'my-react-form-state/yup please import it as : (import yup from 'my-react-form-state/yup')`,
     );
   },
 };

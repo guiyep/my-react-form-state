@@ -2,7 +2,7 @@
 
 > This is a React form state management library that works with React/Redux/React-Native.
 
-[![NPM](https://img.shields.io/npm/v/my-form-state.svg)](https://www.npmjs.com/package/my-form-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/my-react-form-state.svg)](https://www.npmjs.com/package/my-react-form-state) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 This is a React form state management library that works with React/Redux/React-Native.
 
@@ -21,7 +21,7 @@ The library is fully tested using Jest and fully documented using JsDoc.
 ## Getting Started
 
 ```bash
-npm install --save my-form-state
+npm install --save my-react-form-state
 ```
 
 ### Peer Dependencies
@@ -50,14 +50,14 @@ They depend on how you want to use the library:
 
 ## Example with React-Redux
 
-The library will initialize a `my-form-state` entry in your redux state where all the forms data will live. You can check the state at any given time using the redux tools. Any change in the redux state form will trigger an update in the `useMyFormState` hook.
+The library will initialize a `my-react-form-state` entry in your redux state where all the forms data will live. You can check the state at any given time using the redux tools. Any change in the redux state form will trigger an update in the `useMyFormState` hook.
 
 Check <a href="/#/redux/get-started/README?id=my-form-library-redux-configuration">Getting Started Redux</a> for the Redux configuration
 
 ```js
 import React from 'react';
-import { useMyFormState } from 'my-form-state/react-redux';
-import yup from 'my-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react-redux';
+import yup from 'my-react-form-state/yup';
 import * as YUP from 'yup';
 import Form from '@YourFormComponent';
 
@@ -94,7 +94,7 @@ const MyForm = ({ onSubmit }) => {
 export default MyForm;
 ```
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
 
 ## Example with only react
 
@@ -102,9 +102,9 @@ The library will keep the state internal to your component. No extra configurati
 
 ```js
 import React from 'react';
-import yup from 'my-form-state/yup';
+import yup from 'my-react-form-state/yup';
 import * as YUP from 'yup';
-import { useMyFormState } from 'my-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
+import { useMyFormState } from 'my-react-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
 import Form from '@YourFormComponent';
 
 const YUPSchema = YUP.object().shape({
@@ -140,15 +140,15 @@ const MyForm = ({ onSubmit }) => {
 export default MyForm;
 ```
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
 ## Example with only React-Native, it only changes the UI implementation :)
 
 ```js
 import React from 'react';
-import yup from 'my-form-state/yup';
+import yup from 'my-react-form-state/yup';
 import * as YUP from 'yup';
-import { useMyFormState } from 'my-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
+import { useMyFormState } from 'my-react-form-state/react'; <-- THIS IS THE ONLY DIFFERENCE ;) -->
 import Form from '@YourFormComponent';
 
 const YUPSchema = YUP.object().shape({
@@ -184,7 +184,7 @@ const MyForm = ({ onSubmit }) => {
 export default MyForm;
 ```
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
 
 ## Form UI Component Example.
 
@@ -252,8 +252,8 @@ export default Form;
 ```
 ###### Above example With React
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
 ###### Above example With React-Native
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-native-xbsyz)

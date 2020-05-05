@@ -42,8 +42,8 @@ perform any of the next actions:
 **Example**
 
 ```js
-import yup from 'my-form-state/yup';
-import { useMyFormState } from 'my-form-state/react-redux';
+import yup from 'my-react-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react-redux';
 import * as YUP from 'yup';
 
 const YUPSchema = YUP.object().shape({

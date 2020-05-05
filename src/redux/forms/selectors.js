@@ -12,7 +12,7 @@ export const getFormIdState = (state, { formId }) => {
   if (!formsListState) {
     // we will hit this only running from redux
     throw new Error(
-      '`my-form-state` reducer has not been initialized yet. Please run first `initializeReducer` from `my-form-state/redux`',
+      '`my-react-form-state` reducer has not been initialized yet. Please run first `initializeReducer` from `my-react-form-state/redux`',
     );
   }
 
@@ -53,7 +53,7 @@ const memoizeGetForm = memoize((formId, thisFormIdState) => {
 
 /**
  * Selector that returns the current state of the form.
- * Passing formId is not required when used using `registerForm` from `my-form-state/core`.
+ * Passing formId is not required when used using `registerForm` from `my-react-form-state/core`.
  *
  * @kind function
  * @name getForm
@@ -63,7 +63,7 @@ const memoizeGetForm = memoize((formId, thisFormIdState) => {
  * @throws arguments.formId is falsy
  *
  * @example
- *     import { getForm } from 'my-form-state/redux/selectors';
+ *     import { getForm } from 'my-react-form-state/redux/selectors';
  *
  *     getForm(state, { formId: 'unique-form-id' })
  *
@@ -79,7 +79,7 @@ export const getForm = (state, { formId }) => {
 
 /**
  * Gets the forms result data. This result data is the merge between the form changes and the initial state.
- * Passing formId is not required when used using `registerForm` from `my-form-state/core`.
+ * Passing formId is not required when used using `registerForm` from `my-react-form-state/core`.
  *
  * @kind function
  * @name getFormResult
@@ -89,7 +89,7 @@ export const getForm = (state, { formId }) => {
  * @throws arguments.formId is falsy
  *
  * @example
- *     import { getFormResult } from 'my-form-state/redux/selectors';
+ *     import { getFormResult } from 'my-react-form-state/redux/selectors';
  *
  *     getFormResult(state, { formId: 'unique-form-id' })
  *

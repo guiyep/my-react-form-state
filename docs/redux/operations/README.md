@@ -2,32 +2,32 @@
 
 <dl>
 <dt><a>updateField(arguments)</a> ⇒ <code><a>Thunk</a></code></dt>
-<dd><p>Dispatchable operation that updates one field value inside the <code>my-form-state</code> redux state. Will update any form/field property
+<dd><p>Dispatchable operation that updates one field value inside the <code>my-react-form-state</code> redux state. Will update any form/field property
 that is being affected by this field. (ex: isSubmittable, isValid, isInvalid, etc).
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 <dt><a>updateForm(arguments)</a> ⇒ <code><a>Thunk</a></code></dt>
-<dd><p>Dispatchable operation that updates one/more field/s value/s inside the <code>my-form-state</code> redux state. Will update any form/field property
+<dd><p>Dispatchable operation that updates one/more field/s value/s inside the <code>my-react-form-state</code> redux state. Will update any form/field property
 that is being affected by this field. (ex: isSubmittable, isValid, isInvalid, etc).
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 <dt><a>submitForm(arguments)</a> ⇒ <code><a">Thunk</a></code></dt>
 <dd><p>Dispatchable operation that will submit and lock the form state. Will set the isSubmitted form property to true.
 You can await for this operation and will resolve the promise once the validation is completed after the form is submitted.
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 <dt><a>initializeForm(arguments)</a> ⇒ <code><a>Thunk</a></code></dt>
 <dd><p>Dispatchable operation that will initialize the form state. Normally use it after the component that uses this operation is mounted.
 You can await for this operation and will resolve the promise once the form is initialized.
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 <dt><a>removeForm(arguments)</a> ⇒ <code><a>Thunk</a></code></dt>
 <dd><p>Dispatchable operation that will clear the form state from the store. Normally use it after the component that uses this operation is unmounted.
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 <dt><a>resetForm(arguments)</a> ⇒ <code><a>Thunk</a></code></dt>
 <dd><p>Dispatchable operation that will reset the form state to the initial state. You can also change the initialState using the operation.
-The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-form-state/core</code> or <code>useMyFormState</code> from <code>my-form-state/react</code> or <code>my-form-state/react-redux</code>.</p>
+The <code>formId</code> is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code> or <code>useMyFormState</code> from <code>my-react-form-state/react</code> or <code>my-react-form-state/react-redux</code>.</p>
 </dd>
 </dl>
 
@@ -35,9 +35,9 @@ The <code>formId</code> is not required when used using <code>registerForm</code
 
 ## updateField
 
-Dispatchable operation that updates one field value inside the `my-form-state` redux state. Will update any form/field property
+Dispatchable operation that updates one field value inside the `my-react-form-state` redux state. Will update any form/field property
 that is being affected by this field (<a href="/#/state/README#form-state">See the form state</a>).
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: Nothing.
@@ -58,7 +58,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { updateField } from 'my-form-state/redux/operations';
+import { updateField } from 'my-react-form-state/redux/operations';
 
 dispatch(
   updateField({
@@ -73,9 +73,9 @@ dispatch(
 
 ## updateForm
 
-Dispatchable operation that updates one/more field/s value/s inside the `my-form-state` redux state. Will update any form/field property
+Dispatchable operation that updates one/more field/s value/s inside the `my-react-form-state` redux state. Will update any form/field property
 that is being affected by this field (<a href="/#/state/README#form-state">See the form state</a>).
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: Nothing.
@@ -95,7 +95,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { updateForm } from 'my-form-state/redux/operations';
+import { updateForm } from 'my-react-form-state/redux/operations';
 
 dispatch(
   updateForm({
@@ -113,7 +113,7 @@ dispatch(
 
 Dispatchable operation that will submit and lock the form state. Will set the isSubmitted form property to true (<a href="/#/state/README#form-state">See the form state</a>).
 You can await for this operation and will resolve the promise once the validation is completed after the form is submitted.
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: When dispatched returns a <code>Promise</code>.
@@ -129,7 +129,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { submitForm } from 'my-form-state/redux/operations';
+import { submitForm } from 'my-react-form-state/redux/operations';
 
 const submit = async () => {
   try {
@@ -153,7 +153,7 @@ const submit = async () => {
 
 Dispatchable operation that will initialize the form state. Normally use it after the component that uses this operation is mounted.
 You can await for this operation and will resolve the promise once the form is initialized.
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: When dispatched returns a <code>Promise</code>.
@@ -170,7 +170,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { initializeForm } from 'my-form-state/redux/operations';
+import { initializeForm } from 'my-react-form-state/redux/operations';
 
 dispatch(
   initializeForm({
@@ -184,7 +184,7 @@ dispatch(
 ## removeForm
 
 Dispatchable operation that will clear the form state from the store. Normally use it after the component that uses this operation is unmounted.
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: Nothing.
@@ -200,7 +200,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { removeForm } from 'my-form-state/redux/operations';
+import { removeForm } from 'my-react-form-state/redux/operations';
 
 dispatch(
   removeForm({
@@ -214,7 +214,7 @@ dispatch(
 ## resetForm
 
 Dispatchable operation that will reset the form state to the initial state. You can also change the initialState using the operation.
-The `formId` is not required when used using `registerForm` from `my-form-state/core` or `useMyFormState` from `my-form-state/react` or `my-form-state/react-redux`.
+The `formId` is not required when used using `registerForm` from `my-react-form-state/core` or `useMyFormState` from `my-react-form-state/react` or `my-react-form-state/react-redux`.
 
 **Kind**: Thunk.
 **Returns**: Nothing.
@@ -231,7 +231,7 @@ The `formId` is not required when used using `registerForm` from `my-form-state/
 **Example**
 
 ```js
-import { resetForm } from 'my-form-state/redux/operations';
+import { resetForm } from 'my-react-form-state/redux/operations';
 
 dispatch(
   resetForm({

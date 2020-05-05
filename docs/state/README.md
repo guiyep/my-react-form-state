@@ -147,7 +147,7 @@ The `state.fields` will only have those fields.
 ```js
 const state = {
   ...yourState
-  'my-form-state' : {
+  'my-react-form-state' : {
     'dfd766d0-27d8-4776-9d53-c8aaba435240' : {
       ..thisFormState
     },
@@ -157,10 +157,10 @@ const state = {
 
 ```
 
-`state['my-form-state']` => This is the default entry name in the redux state used when initializing `my-form-state` library reducer.
+`state['my-react-form-state']` => This is the default entry name in the redux state used when initializing `my-react-form-state` library reducer.
 You can check <a href="/#/redux/get-started/README#my-form-library-redux-configuration">Redux/Getting Started</a> on how to change it.
 
-`state['my-form-state']['dfd766d0-27d8-4776-9d53-c8aaba435240']` => `dfd766d0-27d8-4776-9d53-c8aaba435240` It is a unique form `uuid` automatically generated when you
+`state['my-react-form-state']['dfd766d0-27d8-4776-9d53-c8aaba435240']` => `dfd766d0-27d8-4776-9d53-c8aaba435240` It is a unique form `uuid` automatically generated when you
 use the `useMyFormState` hook without passing any specific `form ID`.
 
 - Please refer to <a href="/#/react/hook/README#react-hooks">React/HOOKS</a> for more information.

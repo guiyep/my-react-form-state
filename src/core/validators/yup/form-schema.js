@@ -15,7 +15,7 @@ import { jsonSchema } from './json-schema';
  * @throws schema is falsy
  *
  * @example 1
- *  import yup from 'my-form-state/yup'
+ *  import yup from 'my-react-form-state/yup'
  *
  *  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
  *    initialState,
@@ -23,7 +23,7 @@ import { jsonSchema } from './json-schema';
  *  });
  *
  * @example 2
- *  import yup from 'my-form-state/yup'
+ *  import yup from 'my-react-form-state/yup'
  *
  *  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
  *    initialState,

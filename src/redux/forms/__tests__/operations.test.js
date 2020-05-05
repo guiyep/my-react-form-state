@@ -4,7 +4,7 @@ import { initializeReducer } from '../../init';
 import 'babel-polyfill';
 
 const formId = 'unique-form-id';
-initializeReducer({ name: 'my-form-state' });
+initializeReducer({ name: 'my-react-form-state' });
 
 describe('updateField, normal flow', () => {
   const mockDispatch = jest.fn();
@@ -184,7 +184,9 @@ describe('updateForm - with validation function', () => {
         });
 
         const validationFunction = mockDispatch.mock.calls[1][0];
-        expect(() => validationFunction(mockDispatch, () => ({ 'my-form-state': { [formId]: {} } }))).not.toThrow();
+        expect(() =>
+          validationFunction(mockDispatch, () => ({ 'my-react-form-state': { [formId]: {} } })),
+        ).not.toThrow();
 
         setTimeout(() => {
           expect(mockDispatch.mock.calls[2][0]).toEqual({
@@ -219,7 +221,7 @@ describe('updateForm - with validation function', () => {
 
         const validationFunction = mockDispatch.mock.calls[1][0];
         expect(() =>
-          validationFunction(mockDispatch, () => ({ 'my-form-state': { [formId]: { pass: true } } })),
+          validationFunction(mockDispatch, () => ({ 'my-react-form-state': { [formId]: { pass: true } } })),
         ).not.toThrow();
 
         setTimeout(() => {
@@ -263,7 +265,7 @@ describe('submitForm', () => {
 
   it('submitForm to not throw', () => {
     const state = {
-      'my-form-state': {
+      'my-react-form-state': {
         [formId]: {},
       },
     };

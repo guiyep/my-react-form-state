@@ -2,7 +2,7 @@ import ParamValidator from '@mfs-lib/param-validator';
 import { findErrorsFromException } from '../shared';
 
 /**
- * Creates a SYNC Yup schema validator to be used inside the `my-form-state` library.
+ * Creates a SYNC Yup schema validator to be used inside the `my-react-form-state` library.
  *
  * @kind function
  * @param {object} schema - a YUP schema
