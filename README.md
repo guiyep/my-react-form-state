@@ -60,7 +60,7 @@ They depend on how you want to use the library:
 
 ## Form UI Component Example.
 
-I used material-ui just as an example.
+I used material-ui just as an example. You can use any UI library you want or just HTML.
 
 ```js
 import React, { useCallback } from 'react';
