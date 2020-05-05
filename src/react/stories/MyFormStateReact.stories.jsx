@@ -28,7 +28,7 @@ storiesOf(`React/MyFormState`, module)
   })
   .add('Vary Basic', () =>
     withState({})(({ store }) => {
-      const initialStateBasic = { name: '', familyName: '', alias: '', favoriteColor: '' };
+      const initialStateBasic = { name: 'test 1', familyName: 'test 2', alias: 'test 2', favoriteColor: 'test 4' };
       return (
         <Form
           onFormWasUpdated={(formState) => store.set({ ...formState })}
