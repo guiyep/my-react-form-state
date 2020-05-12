@@ -37,8 +37,8 @@ Builds a function that `my-form-library` will use to validate the YUP schema.
 **Example 1**
 
 ```js
-import yup from 'my-form-state/yup';
-import { useMyFormState } from 'my-form-state/react-redux';
+import yup from 'my-react-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react-redux';
 import * as YUP from 'yup';
 
 const YUPSchema = YUP.object().shape({
@@ -57,8 +57,8 @@ const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
 **Example 2**
 
 ```js
-import yup from 'my-form-state/yup';
-import { useMyFormState } from 'my-form-state/react';
+import yup from 'my-react-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react';
 import * as YUP from 'yup';
 
 const YUPSchema = YUP.object().shape({
@@ -78,8 +78,8 @@ const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
 
 ```js
 import React from 'react';
-import yup from 'my-form-state/yup';
-import { useMyFormState } from 'my-form-state/react';
+import yup from 'my-react-form-state/yup';
+import { useMyFormState } from 'my-react-form-state/react';
 import * as YUP from 'yup';
 import Form from '@YourFormComponent';
 
@@ -110,11 +110,11 @@ export default MyForm;
 
 ###### Above example With React
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
 ###### Above example With React-Redux
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
 
 ## JOI
 
@@ -151,8 +151,8 @@ Builds a function that `my-form-library` will use to validate the a JSON schema.
 **Example 1**
 
 ```js
-import jsonSchema from 'my-form-state/json-schema';
-import { useMyFormState } from 'my-form-state/react-redux';
+import jsonSchema from 'my-react-form-state/json-schema';
+import { useMyFormState } from 'my-react-form-state/react-redux';
 
 const JSONSchema = {
   type: 'object',
@@ -177,8 +177,8 @@ const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
 
 ```js
 import React from 'react';
-import jsonSchema from 'my-form-state/json-schema';
-import { useMyFormState } from 'my-form-state/react';
+import jsonSchema from 'my-react-form-state/json-schema';
+import { useMyFormState } from 'my-react-form-state/react';
 import Form from '@YourFormComponent';
 
 const JSONSchema = {
@@ -217,16 +217,16 @@ export default MyForm;
 
 ###### Above example With React
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/strange-northcutt-55xpi)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/strange-northcutt-55xpi)
 
 ###### Above example With React-Redux
 
-[![Edit my-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-albattani-hofp9)
+[![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-albattani-hofp9)
 
 ### Extending AJV configuration
 
 ```js
-import { ajv } from 'my-form-state/json-schema';
+import { ajv } from 'my-react-form-state/json-schema';
 
 // this will be the ajv singleton, you can pass down any prop to the main configuration.
 ```
@@ -239,7 +239,7 @@ You need to create a function that can be async or not, that will return `undefi
 More precise the newFormState is the `state.data` field from the form state. <a href="/#/state/README#form-state">Check the form state</a>
 
 ```js
-import { useMyFormState } from 'my-form-state/react';
+import { useMyFormState } from 'my-react-form-state/react';
 
 const yourCustomFormValidator = (newFormState) => {
   // is valid
@@ -264,7 +264,7 @@ const [formState, { updateField, updateForm, submitForm, resetForm }] = useMyFor
 or
 
 ```js
-import { useMyFormState } from 'my-form-state/react';
+import { useMyFormState } from 'my-react-form-state/react';
 
 const yourCustomFormValidator = async (newFormState) => {
   try {

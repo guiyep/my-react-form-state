@@ -28,11 +28,12 @@ import { gerDefaultReducerProp } from '../../redux/init';
  * @param {Function} [arguments.formSchema] - The form schema. This can be json-schema, yup or joi.
  * @param {Function} [arguments.formValidator] - The form validator.
  * @param {Object} [arguments.initialState] - The initial state you want to use.
+ * @param {boolean} [arguments.onFormChange] - Callback that is executed when the from state changes.
  * @return {MyFormStateHook} Hook to be use in a React component.
  *
  * @example
  *
- * import yup from 'my-form-state/yup'
+ * import yup from 'my-react-form-state/yup'
  *
  * const [formState, { updateField, updateForm, submitForm, resetForm}] = useMyFormState({
  *     initialState: { ...props },
@@ -40,7 +41,7 @@ import { gerDefaultReducerProp } from '../../redux/init';
  * });
  */
 
-export const useMyFormState = ({ formId, formValidator, formSchema, initialState }) => {
+export const useMyFormState = ({ formId, formValidator, formSchema, initialState, onFormChange = () => {} }) => {
   const {
     operations,
     selectors: { getForm },
@@ -80,6 +81,10 @@ export const useMyFormState = ({ formId, formValidator, formSchema, initialState
   ]);
 
   const thisForm = getForm(state);
+
+  useEffect(() => {
+    onFormChange(thisForm);
+  }, [thisForm]);
 
   return [
     thisForm,

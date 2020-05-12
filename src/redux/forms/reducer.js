@@ -92,7 +92,7 @@ export const formReducer = (state = {}, action) => {
     case SUBMIT_FORM: {
       const nextState = {
         ...state,
-        resultData: unflatten(state.data),
+        resultData: unflatten({ ...state.initialData, ...state.data }),
         isSubmitted: true,
       };
 

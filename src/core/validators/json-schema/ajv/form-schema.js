@@ -14,7 +14,7 @@ import { formValidator as formValidatorSync } from './form-validator/sync';
  *
  *
  * @example 1
- *  import jsonSchema from 'my-form-state/json-schema'
+ *  import jsonSchema from 'my-react-form-state/json-schema'
  *
  *  const [formState, { updateField, submitForm, resetForm }] = useMyFormState({
  *    initialState,

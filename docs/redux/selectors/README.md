@@ -3,11 +3,11 @@
 <dl>
 <dt><a href="#getForm">getForm(arguments)</a> ⇒ <code>object</code></dt>
 <dd><p>Selector that returns the current state of the form.
-Passing formId is not required when used using <code>registerForm</code> from <code>my-form-state/core</code>.</p>
+Passing formId is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code>.</p>
 </dd>
 <dt><a href="#getFormResult">getFormResult(arguments)</a> ⇒ <code>object</code></dt>
 <dd><p>Gets the forms result data. This result data is the merge between the form changes and the initial state.
-Passing formId is not required when used using <code>registerForm</code> from <code>my-form-state/core</code>.</p>
+Passing formId is not required when used using <code>registerForm</code> from <code>my-react-form-state/core</code>.</p>
 </dd>
 </dl>
 
@@ -16,7 +16,7 @@ Passing formId is not required when used using <code>registerForm</code> from <c
 ## getForm(arguments) ⇒ <code>object</code>
 
 Selector that returns the current state of the form.
-Passing formId is not required when used using `registerForm` from `my-form-state/core`.
+Passing formId is not required when used using `registerForm` from `my-react-form-state/core`.
 
 **Kind**: global function  
 **Returns**: <code>object</code> - form state.  
@@ -34,7 +34,7 @@ Passing formId is not required when used using `registerForm` from `my-form-stat
 **Example**
 
 ```js
-import { getForm } from 'my-form-state/redux/selectors';
+import { getForm } from 'my-react-form-state/redux/selectors';
 
 getForm(state, { formId: 'unique-form-id' });
 ```
@@ -44,7 +44,7 @@ getForm(state, { formId: 'unique-form-id' });
 ## getFormResult(arguments) ⇒ <code>object</code>
 
 Gets the forms result data. This result data is the merge between the form changes and the initial state.
-Passing formId is not required when used using `registerForm` from `my-form-state/core`.
+Passing formId is not required when used using `registerForm` from `my-react-form-state/core`.
 
 **Kind**: global function  
 **Returns**: <code>object</code> - form state.  
@@ -62,7 +62,7 @@ Passing formId is not required when used using `registerForm` from `my-form-stat
 **Example**
 
 ```js
-import { getFormResult } from 'my-form-state/redux/selectors';
+import { getFormResult } from 'my-react-form-state/redux/selectors';
 
 getFormResult(state, { formId: 'unique-form-id' });
 ```
