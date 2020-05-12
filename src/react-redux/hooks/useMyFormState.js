@@ -29,6 +29,7 @@ import { useThunks } from './useThunks';
  * @param {Object} [arguments.initialState] - The initial state you want to use.
  * @param {boolean} [arguments.clearOnUnmount=true] - When the component unmounts it will remove the form reference.
  * @param {boolean} [arguments.isGlobalForm=false] - Tells if the form is defined global or not. If that is the case we will just reuse it.
+ * @param {boolean} [arguments.onFormChange] - Callback that is executed when the from state changes.
  * @return {MyFormStateHook} hook to be use in a react component.
  *
  * @example
@@ -48,6 +49,7 @@ export const useMyFormState = ({
   initialState,
   clearOnUnmount = true,
   isGlobalForm = false,
+  onFormChange = () => {},
 }) => {
   const {
     operations,
@@ -77,6 +79,10 @@ export const useMyFormState = ({
       }
     };
   }, []);
+
+  useEffect(() => {
+    onFormChange(formState);
+  }, [formState]);
 
   const resetForm = useCallback((param) => dispatch(operations.resetForm({ initialState: param.initialState })), [
     operations.resetForm,

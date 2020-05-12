@@ -38,6 +38,7 @@ perform any of the next actions:
 | [arguments.formSchema]    | N   | <code>function</code> | The form schema. This can be YUP/JOI/JSON-SCHEMA <a href="/#/core/validators/README">Check Schema</a> |
 | [arguments.formValidator] | N   | <code>function</code> | The form validator. <a href="/#/core/validators/README#custom">Check Validators</a>                   |
 | [arguments.initialState]  | N   | <code>Object</code>   | The initial state you want to use.                                                                    |
+| [arguments.onFormChange]  | N   | <code>Object</code>   | Callback that is executed when the from state changes.                                                |
 
 **Example**
 
