@@ -113,7 +113,7 @@
     "rollup-plugin-replace": "2.2.0",
     "rollup-plugin-terser": "5.3.0",
     "storybook-addon-redux-listener": "0.1.7",
-    "yup": "0.28.5"
+    "yup": "0.29.0"
   },
   "files": [
     "core/index.js",
