@@ -68,7 +68,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "babel-polyfill": "6.26.0",
     "babel-preset-minify": "0.5.1",
-    "docsify-cli": "4.4.0",
+    "docsify-cli": "4.4.1",
     "eslint": "7.1.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.11.0",
