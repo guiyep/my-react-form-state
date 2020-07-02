@@ -99,7 +99,7 @@
     "redux": "4.0.5",
     "redux-devtools-extension": "2.13.8",
     "redux-thunk": "2.3.0",
-    "rollup": "2.18.1",
+    "rollup": "2.18.2",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-babel-minify": "10.0.0",
     "rollup-plugin-cleaner": "1.0.0",
