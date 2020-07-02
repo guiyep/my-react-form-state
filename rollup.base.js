@@ -51,7 +51,6 @@ export const rollupBase = {
     }),
     isProd &&
       terser({
-        sourcemap: true,
         toplevel: true,
       }),
   ],
