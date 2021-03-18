@@ -1,6 +1,6 @@
 {
   "name": "my-react-form-state",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "This is a React form state management library that works with React/Redux/React-Native/Context API.",
   "author": "guiyep",
   "license": "MIT",
