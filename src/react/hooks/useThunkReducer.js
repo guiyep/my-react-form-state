@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
+import { useMyReactFormContext } from '../context/useMyReactFormContext';
 
 /**
  * @function Thunk
@@ -18,12 +19,17 @@ import { useCallback, useRef, useState } from 'react';
  * dispatcher supports thunks.
  *
  * @param {Function} reducer
- * @param {*} initialArg
- * @param {Function} [init]
+ * @param {*} initialState
  * @returns {[*, Dispatch]}
  */
-export function useThunkReducer(reducer, initialArg, init = (a) => a) {
-  const [hookState, setHookState] = useState(init(initialArg));
+export function useThunkReducer(reducer, { initialState, useContext }) {
+  // the context will be initialized already if used
+  const [contextState, setContextState] = useMyReactFormContext();
+  const [internalState, setInternalState] = useState(initialState);
+
+  // we will read the context and if there is none present we will use internal state.
+  const hookState = useContext && contextState ? contextState : internalState;
+  const setHookState = useContext && contextState ? setContextState : setInternalState;
 
   // State management.
   const state = useRef(hookState);

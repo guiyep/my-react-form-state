@@ -1,11 +1,11 @@
 import { addFormToRegistry, removeFormFromRegistry } from '@mfs-registry';
 import { getFormIdState, getForm, getFormResult } from '../selectors';
-import { gerDefaultReducerProp, initializeReducer } from '../../init';
+import { getDefaultReducerProp, initializeReducer } from '../../init';
 
 const formId = 'unique-form-id';
 
 initializeReducer();
-const formStateProp = gerDefaultReducerProp();
+const formStateProp = getDefaultReducerProp();
 
 describe('getFormIdState', () => {
   it('getFormIdState to throw with wrong params', () => {

@@ -1,13 +1,13 @@
 import { memoize } from '@mfs-lib/memoize';
 import ParamValidator from '@mfs-lib/param-validator';
 import { getFormFromRegistry } from '@mfs-registry';
-import { gerReducerProp, gerDefaultReducerProp } from '../init';
+import { gerReducerProp, getDefaultReducerProp } from '../init';
 
 export const getFormIdState = (state, { formId }) => {
   ParamValidator.isString(formId, 'formId');
   ParamValidator.isObject(state, 'state');
 
-  const formsListState = state && state[gerReducerProp() || gerDefaultReducerProp()];
+  const formsListState = state && state[gerReducerProp() || getDefaultReducerProp()];
 
   if (!formsListState) {
     // we will hit this only running from redux

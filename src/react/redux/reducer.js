@@ -1,7 +1,7 @@
 import { formReducer } from '../../redux/forms/reducer';
-import { gerDefaultReducerProp } from '../../redux/init';
+import { getDefaultReducerProp } from '../../redux/init';
 
-const formStateProp = gerDefaultReducerProp();
+const formStateProp = getDefaultReducerProp();
 
 export const reducer = (state = {}, action) => {
   const formId = action && action.options && action.options.formId;
@@ -19,7 +19,8 @@ export const reducer = (state = {}, action) => {
     return state;
   }
 
-  const nextState = nextFormState !== formState ? { [formStateProp]: { [formId]: nextFormState } } : state;
+  const nextState =
+    nextFormState !== formState ? { [formStateProp]: { ...state[formStateProp], [formId]: nextFormState } } : state;
 
   // THIS WILL ONLY BE PRESENT IN DEV MODE ON STORYBOOK, IN PRODUCTION BUILD WILL BE REMOVED BY ROLLUP
   // eslint-disable-next-line
