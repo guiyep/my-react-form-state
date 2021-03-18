@@ -15,7 +15,7 @@ const MyForm = ({ initialState, emptyState, schema, jsonSchemaUsingAjv, onFormWa
   const onEmptyHandler = useCallback(() => resetForm({ initialState: emptyState }), [resetForm, emptyState]);
 
   // this is only for testing purposes
-  useEffect(() => onFormWasUpdated(formState), [formState]);
+  useEffect(() => onFormWasUpdated && onFormWasUpdated(formState), [formState]);
 
   const onSubmitHandler = async () => {
     const result = await submitForm();

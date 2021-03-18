@@ -2,7 +2,7 @@ import { useMemo, useEffect, useCallback } from 'react';
 import { registerForm } from '@mfs-core';
 import reducer from '../redux/reducer';
 import { useThunkReducer } from './useThunkReducer';
-import { gerDefaultReducerProp } from '../../redux/init';
+import { getDefaultReducerProp } from '../../redux/init';
 
 /**
  * @typedef {object} formState
@@ -29,6 +29,7 @@ import { gerDefaultReducerProp } from '../../redux/init';
  * @param {Function} [arguments.formValidator] - The form validator.
  * @param {Object} [arguments.initialState] - The initial state you want to use.
  * @param {boolean} [arguments.onFormChange] - Callback that is executed when the from state changes.
+ * @param {boolean} [arguments.useContext] - Indicator that will tell the hook to not try to use the react context when present.
  * @return {MyFormStateHook} Hook to be use in a React component.
  *
  * @example
@@ -41,7 +42,14 @@ import { gerDefaultReducerProp } from '../../redux/init';
  * });
  */
 
-export const useMyFormState = ({ formId, formValidator, formSchema, initialState, onFormChange = () => {} }) => {
+export const useMyFormState = ({
+  formId,
+  formValidator,
+  formSchema,
+  initialState,
+  onFormChange = () => {},
+  useContext = true,
+}) => {
   const {
     operations,
     selectors: { getForm },
@@ -58,7 +66,7 @@ export const useMyFormState = ({ formId, formValidator, formSchema, initialState
     [],
   );
 
-  const [state, dispatch] = useThunkReducer(reducer, { [gerDefaultReducerProp()]: {} });
+  const [state, dispatch] = useThunkReducer(reducer, { initialState: { [getDefaultReducerProp()]: {} }, useContext });
 
   useEffect(() => {
     dispatch(operations.initializeForm({ initialState: initialFormState }));

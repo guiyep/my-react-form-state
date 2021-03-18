@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import * as YUP from 'yup';
 import { action as actionAddon } from '@storybook/addon-actions';
 import { withState } from '@dump247/storybook-state';
+import { MyFormStateProvider } from '../index';
 import FormNested from './MyFormNested.container';
 import MyFormNestedOnlyValidateAsync from './MyFormNestedOnlyValidateAsync.container';
 import Form from './MyForm.container';
@@ -35,6 +36,18 @@ storiesOf(`React/MyFormState`, module)
           onSubmit={onSubmit}
           initialState={initialStateBasic}
         />
+      );
+    })(),
+  )
+  .add('Vary Basic with context', () =>
+    withState({})(() => {
+      const initialStateBasic = { name: 'test 1', familyName: 'test 2', alias: 'test 2', favoriteColor: 'test 4' };
+      const initialStateBasic2 = { name: 'test 2', familyName: 'test 66', alias: 'test 88', favoriteColor: 'test 99' };
+      return (
+        <MyFormStateProvider name="ContextForms">
+          <Form onSubmit={onSubmit} initialState={initialStateBasic} />
+          <Form onSubmit={onSubmit} initialState={initialStateBasic2} />
+        </MyFormStateProvider>
       );
     })(),
   )

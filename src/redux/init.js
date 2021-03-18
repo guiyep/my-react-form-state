@@ -6,7 +6,7 @@ let reducerProp;
 /**
  * DON'T USE - INTERNAL
  */
-export const gerDefaultReducerProp = () => {
+export const getDefaultReducerProp = () => {
   return 'my-react-form-state';
 };
 
@@ -37,7 +37,7 @@ export const gerDefaultReducerProp = () => {
  * const store = createStore(reducer, initialState)
  */
 
-export const initializeReducer = ({ name = gerDefaultReducerProp() } = {}) => {
+export const initializeReducer = ({ name = getDefaultReducerProp() } = {}) => {
   ParamValidator.isString(name, 'name');
 
   if (reducerProp) {
