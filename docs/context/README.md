@@ -12,14 +12,16 @@ const initialStateBasic = { name: 'test 1', familyName: 'test 2', alias: 'test 2
 const initialStateBasic2 = { name: 'test 2', familyName: 'test 66', alias: 'test 88', favoriteColor: 'test 99' };
 
 return (
-  <MyFormStateProvider name="ContextForm1AndForm2">
-    <Form onSubmit={onSubmit} initialState={initialStateBasic} /> // form 1
-    <Form onSubmit={onSubmit} initialState={initialStateBasic2} /> // form 2
-  </MyFormStateProvider>
-  <MyFormStateProvider name="ContextForm3AndForm4">
-    <Form onSubmit={onSubmit} initialState={{}} /> // form 3
-    <Form onSubmit={onSubmit} initialState={{}} /> // form 4
-  </MyFormStateProvider>
+  <>
+    <MyFormStateProvider name="ContextForm1AndForm2">
+      <Form onSubmit={onSubmit} initialState={initialStateBasic} /> // form 1
+      <Form onSubmit={onSubmit} initialState={initialStateBasic2} /> // form 2
+    </MyFormStateProvider>
+    <MyFormStateProvider name="ContextForm3AndForm4">
+      <Form onSubmit={onSubmit} initialState={{}} /> // form 3
+      <Form onSubmit={onSubmit} initialState={{}} /> // form 4
+    </MyFormStateProvider>
+  </>
 );
 ```
 

@@ -38,7 +38,7 @@ yarn add my-react-form-state
 
 They depend on how you want to use the library:
 
-#### Just React:
+#### Just React
 
 ```bash
 {
@@ -58,11 +58,11 @@ They depend on how you want to use the library:
 }
 ```
 
-## Try It!!
+## Try It
 
 [![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dark-bash-6l0hy)
 
-## Form UI Component Example.
+## Form UI Component Example
 
 I used material-ui just as an example. You can use any UI library you want or just HTML.
 
@@ -228,14 +228,16 @@ const initialStateBasic = { name: 'test 1', familyName: 'test 2', alias: 'test 2
 const initialStateBasic2 = { name: 'test 2', familyName: 'test 66', alias: 'test 88', favoriteColor: 'test 99' };
 
 return (
-  <MyFormStateProvider name="ContextForm1AndForm2">
-    <Form onSubmit={onSubmit} initialState={initialStateBasic} /> // form 1
-    <Form onSubmit={onSubmit} initialState={initialStateBasic2} /> // form 2
-  </MyFormStateProvider>
-  <MyFormStateProvider name="ContextForm3AndForm4">
-    <Form onSubmit={onSubmit} initialState={{}} /> // form 3
-    <Form onSubmit={onSubmit} initialState={{}} /> // form 4
-  </MyFormStateProvider>
+  <>
+    <MyFormStateProvider name="ContextForm1AndForm2">
+      <Form onSubmit={onSubmit} initialState={initialStateBasic} /> // form 1
+      <Form onSubmit={onSubmit} initialState={initialStateBasic2} /> // form 2
+    </MyFormStateProvider>
+    <MyFormStateProvider name="ContextForm3AndForm4">
+      <Form onSubmit={onSubmit} initialState={{}} /> // form 3
+      <Form onSubmit={onSubmit} initialState={{}} /> // form 4
+    </MyFormStateProvider>
+  </>
 );
 ```
 
@@ -283,7 +285,7 @@ export default MyForm;
 
 [![Edit my-react-form-state](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/clever-browser-l6tvx)
 
-## With JSON form schema (Using the latest [JsonSchema](https://json-schema.org/) draft).
+## With JSON form schema (Using the latest [JsonSchema](https://json-schema.org/) draft)
 
 ```js
 import React from 'react';
