@@ -12,7 +12,6 @@
   "react-redux": "build/react-redux/index.js",
   "json-schema": "build/json-schema/index.js",
   "json-schema-custom": "build/json-schema/custom/index.js",
-  "private": false,
   "yup": "build/yup/index.js",
   "engines": {
     "node": ">=9",
@@ -48,10 +47,7 @@
     "build-storybook": "build-storybook -c .storybook",
     "prettier": "prettier --write src/**/**/*.{js,jsx}",
     "eslint": "eslint --fix src/**/**/*.{js,jsx}",
-    "docs": "docsify serve docs",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "docs": "docsify serve docs"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
@@ -89,11 +85,10 @@
     "eslint-plugin-standard": "5.0.0",
     "extend-shallow": "3.0.2",
     "generate-random-data": "0.0.3",
-    "husky": "^7.0.0",
+    "husky": "4.3.0",
     "jest": "27.0.6",
     "jest-css-modules": "2.1.0",
     "lint-staged": "11.0.0",
-    "pinst": "^2.1.6",
     "prettier": "2.3.2",
     "prop-types": "15.7.2",
     "react": "17.0.2",
